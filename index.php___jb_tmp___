@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
-//$conn = new mysqli('localhost', 'root', 'root','todo');
-$con=mysqli_connect("localhost","root","root","todo");
+include "db.php";
 
-$rows=mysqli_query($con,"SELECT * FROM  todo");
+$sql = "SELECT * FROM  todo";
+$rows=$db->query($sql);
 
 ?>
 <html lang="en-us" >

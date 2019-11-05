@@ -1,5 +1,5 @@
 <?php
-include "db.php";
+$con=mysqli_connect("localhost","root","root","todo");
 /**
  * Created by PhpStorm.
  * User: Fahad Uddin
@@ -8,8 +8,7 @@ include "db.php";
  */
 $id = $_GET['id'];
 //echo $id;
-$sql="DELETE FROM todo WHERE id ='$id'";
-$db->query($sql);
+$db=mysqli_query($con,"DELETE FROM todo WHERE id ='$id'");
 if ($db){
     header('location:index.php');
 }

@@ -5,13 +5,14 @@
  * Date: 3/11/2018
  * Time: 11:40 PM
  */
-include "db.php";
-echo "ok";
+//include "db.php";
+
+$conn = new mysqli('localhost', 'root', 'root','todo');
 
 $name =$_POST['task'];
-//echo $name;
-$sql = "INSERT into todo (name) values ('$name')";
-$val = $db->query($sql);
+
+$val=mysqli_query($conn,"INSERT into todo (name) values ('$name')");
+echo $val;
 if($val){
 
     header('location:index.php');

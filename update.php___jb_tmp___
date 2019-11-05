@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <?php
-$conn=mysqli_connect("localhost","root","root","todo");
-
+include "db.php";
 $id= $_GET['id'];
 //echo $id;
 $sql="select * FROM todo where id='$id'";
-$rows=mysqli_query($conn,$sql);
 //var_dump($sql);
+$rows = $db->query($sql);
 $row = $rows->fetch_assoc();
 //var_dump($row);
 
@@ -16,7 +15,7 @@ if (isset($_POST['send'])):
 $task=$_POST['task'];
 $sql = "update todo set name ='$task' WHERE id='$id'";
 echo $sql;
-$rows=mysqli_query($conn,$sql);
+$db->query($sql);
 header('location:index.php');
 endif;
 ?>

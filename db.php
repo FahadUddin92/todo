@@ -6,9 +6,8 @@
  * Time: 11:41 PM
  */
 
-$db = new MySqli;
-$db->connect('localhost', 'root', '','todo');
-if($db){
-   // echo "success";
+$conn = new mysqli('localhost', 'root', 'todo','todo');
+
+if($conn){
 }
 ?>
